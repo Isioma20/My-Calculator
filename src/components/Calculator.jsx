@@ -53,7 +53,7 @@ const Calculator = () => {
 
      }
      // this ensures clean decimal places
-     const cleanFloat = (num) => Number(num.toPrecision(8));
+     const cleanFloat = (num) => Number(num.toPrecision(6));
      
      const handleEquality = () => {
         if (!mathOp) return;
@@ -76,13 +76,13 @@ const Calculator = () => {
 
   return (
     <>
-    <div className="bg-black/100 p-5 rounded-2xl w-md mx-auto max-sm:w-sm">
-    <div className={`bg-black/100 p-10 text-white text-right text-5xl whitespace-nowrap overflow-x-auto no-scrollbar`}
-    style={{direction: isTyping ? "rtl" : "ltr",}}>
-    <span style={{ direction: "ltr", display: "inline-block" }}>
-        {displayVal}
-    </span>
-    </div>
+    <div className="bg-black/100 p-5 rounded-2xl w-full max-w-md mx-auto max-sm:max-w-sm">
+      <div className={`bg-black/100 py-10 text-white text-right text-5xl whitespace-nowrap overflow-x-auto no-scrollbar`}
+      style={{direction: isTyping ? "rtl" : "ltr",}}>
+      <span style={{ direction: "ltr", display: "inline-block" }}>
+         {displayVal}
+      </span>
+      </div>
 
         <div className="grid grid-cols-4 gap-4">
             <CalculatorButton color="grey" onClick={handleClear}>C</CalculatorButton>
